@@ -1,0 +1,32 @@
+/* ==========================================================================
+   BODY / ELEMENT
+   Le body permet d'initialiser les propriétés générales de la page.
+   Les éléments de la page vont hérités des propriétés inscrite dans body
+   ========================================================================== */
+html {
+    
+    &:not(.custom-cursor) .cursor {
+        top: -1000px;
+        left: -1000px;
+   }
+
+   &.custom-cursor {
+       cursor: none;
+        *{
+           cursor: none;
+       }
+   }
+  
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg-primary);
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-content);
+    line-height: 1.6;
+}

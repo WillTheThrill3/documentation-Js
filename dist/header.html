@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation | timtools</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js" integrity="sha512-/Swpp6aCQ0smuZ+zpklJqMClcUlvxhpLf9aAcM7JjJrj2waCU4dikm3biOtMVAflOOeniW9qzaNXNrbOAOWFCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-markup.min.js" integrity="sha512-+ELqhG7rn9xgybNJa3VI05AczCW2IaKwpKdDC5lD8RMAGc6t+OEV0Cta1QyKCrsncgaRHiN80atxfVo72+M8xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-scss.min.js" integrity="sha512-aczOaJ+mB9uGT6dMJbDaUsS2PWG+XII+1ypFQ0L22Z132V6kMM6m70pQssXsPAFmLI5xkgx/hknBuUuJIJKZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-rQtEAFW9oS0hBzTOYejcMPkq3jYbOoueW4C5CkRmrC3yzjw24oT+9V72/JGvI3EzAnU3DZlUn76OD0WTAJhP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" integrity="sha512-jkelqcQ/rwCw36MumZ5fWlgs+aZEMLrgGt51ParMK7Tyam7kB5ZG+mB5R0NSeoGVr/4N+q3oGpLaFR/vXgzjTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" integrity="sha512-g33HCZ23fueSK96JEeoy9DelAlu7Ry5mtxqLk+zlEiPj7NIpFI6T9mybOvQxjBN50FALFDCviMXiLqWJcFwzaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha512-Dqf5696xtofgH089BgZJo2lSWTvev4GFo+gA2o4GullFY65rzQVQLQVlzLvYwTo0Bb2Gpb6IqwxYWtoMonfdhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+
+
+    <section class="split" id="intro">
+        <nav class="split__nav">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+            </a>
+            <ul>
+                <li>
+                    <a href="index.html" class="back">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                        Retour
+                    </a>
+                </li>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#utilisation">Utilisations</a></li>
+                <li><a href="#demonstration">Démonstration</a></li>
+            </ul>
+        </nav>
+
+        <div class="split__content">
+            <section class="split__section" id="intro">
+                <h1>Header</h1>
+                <p>
+                    Cette composante permet de dynamiser l'entête de la page en mode 'desktop' et 'mobile'
+                </p>
+            </section>
+
+            <section class="split__section" id="utilisation">
+
+                <h2>Comment l'utiliser</h2>
+
+                <p>
+                    Afin d'utiliser la composante, mettre l'attribut <strong>data-component="Header"</strong> sur une
+                    structure html à la balise <strong>header</strong>.
+                </p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                <header class="header__demo" data-component="Header"></header>
+            </script>
+
+                <p>Pour que les styles soient bien appliqués, il faut importer le style <strong>header-demo.scss</strong> dans le fichier <strong>main.scss</strong>.</p>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                @import 'components/header-demo.scss';
+
+            </script>
+
+                <p>Voici un exemple de la structure <strong>header</strong> et qui sera utilisé pour la démonstration </p>
+
+                <!-- HTML exemple de structure -->
+                <details>
+                    <summary>exemple de l'emplacement</summary>
+
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                    <!-- Zone header -->
+                    <header class="header__demo" data-component="Header"> <!-- Important, il est nécéssaire ajouter la classe et la composante -->
+                       <a href="#" class="header__brand__demo">
+                           <img src="assets/images/logo-timtools.svg" alt="TimTools" />
+                       </a>
+                       <!-- ajouter les classes ci-dessous vous permet d'accéder au CSS accuellement intégré -->
+                       <nav class="nav-primary"> 
+                           <ul>
+                               <li>
+                                   <a href="#" class="nav-primary__item">Menu 1</a> 
+                               </li>
+                               <li>
+                                   <a href="#" class="nav-primary__item">Menu 2</a>
+                               </li>
+                               <li class="nav-right">
+                                   <a href="#" class="nav-primary__item">Menu 3</a>
+                               </li>
+                               <li>
+                                   <a href="#" class="nav-primary__item">Menu 4</a>
+                               </li>
+                           </ul>
+                       </nav>
+                       <button class="header__toggle__demo js-toggle"> <!-- Important, ses classes permettent d'avoir un menu hamburger et son intéraction à la version mobile -->
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                       </button>
+                   </header>
+                       
+                </script>
+                </details>
+
+                <h2>Modification d'ouverture et fermeture en mobile</h2>
+
+                <p>Pour faire les modifications de l'ouverture et de la fermeture, il sera nécéssaire de cibler les bonnes classes, ce sera fait pour vous!</p>
+                <br>
+                <p>Dans le fichier <strong>header-demo.scss</strong> cibler <strong>les classes</strong> afin d'accéder aux propriétés</p>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                        <!-- propriétés misent en évidence pour l'ouverture et fermeture -->
+                    .nav-primary {
+                        <!-- mise en évidence les éléments d'ouverture/fermeture -->
+                        transition: all .4s $ease-out-expo ; <!-- ceci permet de contrôler tous les temps d'animation et effets -->
+                        transform: translateX(100%); <!-- cette translation permet de choisir l'emplacement du menu avant d'être activé  -->
+
+
+
+                        <!-- un fois que le menu hamburger est cliqué -->
+                        .nav-is-active & {
+                            transform: translateX(50%); <!-- ceci détermine l'ouverture du menu et qui arrivera à droite et à la moitié (50%) de la page -->
+                        } 
+
+                        <!-- la position des boutons de menu en mobile -->
+                        ul{
+                            .nav-is-active & {
+                                transform: translateX(-25%); <!-- ceci détermine la position des boutons de menu -->
+                                opacity: 1; <!-- ceci détermine l'opacité des boutons de menu -->
+                            }
+                        }
+                    
+                    }    
+                </script>
+
+                <p>Voici la version complète du code ayant tous les propriétés incluent le visuel </p>
+
+                <details>
+                    <summary>version complète</summary>
+                    <script type="text/plain" class="language-scss">
+
+                        # SCSS
+
+                            <!-- le contenu du menu en mobile lorsque le menu hamburger est cliqué  --> 
+                            .nav-primary {
+                                background-color: var(--color-bg-secondary); <!-- couleur désiré -->
+                                position: absolute; <!-- Important, afin de le personnaliser correctement le menu en mobile, ne pas le modifier -->
+                                top: 0; <!-- Important, afin de le personnaliser correctement le menu en mobile, ne pas le modifier -->
+                                left: 0; <!-- Important, afin de le personnaliser correctement le menu en mobile, ne pas le modifier -->
+                                width: 100%; <!-- Important, garder sa largeur complète -->
+                                height: 100vh; <!-- Important, ceci défini la hauteur du menu en mobile, dans ce cas-ci, le menu prend la hauteur complète -->
+                                padding-top: var(--header-height);
+                                display: flex; <!-- Important, afin de personnaliser le menu en mobile, ne pas le modifier -->
+                                overflow-y: auto; <!-- Important, si jamais vous avez beaucoup de contenu dans le menu, cela permet un défilement fluide à la verticale -->
+                                z-index: 1; <!-- le nombre défini par la priorité de ce contenu, plus que le nombre est élevé, plus il sera visuellement prioritaire -->
+                                transition: all .4s $ease-out-expo ; <!-- ceci permet de contrôler tous les temps d'animation et effets -->
+                                transform: translateX(100%); <!-- cette translation permet de choisir l'emplacement du menu avant d'être activé  -->
+
+                                <!-- contenu responsive lorsque la largeur est a $breakpoint-md ou inférieur --> 
+                                <!-- contenu de menu lorsqu'il n'est pas mobile --> 
+                                @media screen and (min-width: $breakpoint-md) { <!-- lorsque la largeur est a breakpoint-md ou inférieur -->
+                                    transform: none;
+                                    position: relative; <!-- la position sera relative au parent .nav-primary  -->
+                                    height: auto; <!-- hauteur automatique -->
+                                    width: auto; <!-- largeur automatique  -->
+                                    padding: 0; <!-- aucune marge externe -->
+                                    display: block;  <!-- Important, le laisser comme tel -->
+                                    z-index: 2; <!-- le nombre défini par la priorité de ce contenu, plus que le nombre est élevé, plus il sera visuellement prioritaire -->
+                                }
+                                <!-- la translation de la navigation en mobile lorsque vous cliquez le menu hamburger --> 
+                                .nav-is-active & {
+                                    transform: translateX(50%); <!-- ceci détermine l'ouverture du menu et qui arrivera à droite et à la moitié (50%) de la page -->
+                                }
+
+                                ul{
+                                    display: flex; <!-- ceci permet de modifier la struction des contenus -->
+                                    flex-direction: column; <!-- change la direction en colonne -->
+                                    justify-content: flex-start; <!-- ceci répartit à partir de la gauche -->
+                                    list-style: none; <!-- ceci enlève les points de liste -->
+                                    padding: 0; <!-- aucune marge externe -->
+                                    width: 100%; <!-- largeur complète -->
+                                    opacity: 0; <!-- opacité -->
+                                
+
+                                <!-- positionnement des menus de navigation en mobile et l'opacité --> 
+                                .nav-is-active & {
+                                    transform: translateX(-25%); <!-- une transformation de type translate en X à -25% -->
+                                    opacity: 1; <!-- opacité -->
+                                }
+
+                                <!-- contenu responsive lorsque la largeur est a $breakpoint-md ou inférieur --> 
+                                    @media screen and (min-width: $breakpoint-md) { <!-- lorsque la largeur est a breakpoint-md ou inférieur -->
+                                        flex-direction: row; <!-- la direction en rangée -->
+                                        opacity: 1; <!-- opacité -->
+                                        transform: none; <!-- aucune transformation -->
+                                    }
+                                }
+                                .nav-right {
+                                    <!-- contenu responsive lorsque la largeur est a $breakpoint-md ou inférieur --> 
+                                    @media screen and (min-width: $breakpoint-md) { <!-- lorsque la largeur est a breakpoint-md ou inférieur -->
+                                        margin-left: calc(var(--logo-width) + 40px); <!-- une marge de gauche -->
+                                    }
+                                    
+                                }
+                            }
+
+                        </script>
+
+                </details>
+
+                <h2>Petit aide mémoire des effets</h2>
+
+                <a href="https://www.w3schools.com/css/css3_2dtransforms.asp" class="btn" target="_blank">
+                    Le transform en 2D
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+
+                <a href="https://www.w3schools.com/css/css3_3dtransforms.asp" class="btn" target="_blank">
+                    Le transform en 3D
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+
+                <a href="https://www.w3schools.com/css/css3_transitions.asp" class="btn" target="_blank">
+                    Les transitions
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+
+                <a href="https://www.w3schools.com/css/css3_animations.asp" class="btn" target="_blank">
+                    Les animations
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+
+            </section>
+
+            <section class="split__section" id="demonstration">
+
+                <h2>démonstration du header</h2>
+
+                <p>Cliquez au bouton ci-dessous pour voir le header</p>
+
+                <a href="header-demo.html" class="btn">
+                    Page header
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+
+            </section>
+
+        </div>
+    </section>
+
+    <div class="cursor" data-component="Cursor"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js" integrity="sha512-/Swpp6aCQ0smuZ+zpklJqMClcUlvxhpLf9aAcM7JjJrj2waCU4dikm3biOtMVAflOOeniW9qzaNXNrbOAOWFCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-markup.min.js" integrity="sha512-+ELqhG7rn9xgybNJa3VI05AczCW2IaKwpKdDC5lD8RMAGc6t+OEV0Cta1QyKCrsncgaRHiN80atxfVo72+M8xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-scss.min.js" integrity="sha512-aczOaJ+mB9uGT6dMJbDaUsS2PWG+XII+1ypFQ0L22Z132V6kMM6m70pQssXsPAFmLI5xkgx/hknBuUuJIJKZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-rQtEAFW9oS0hBzTOYejcMPkq3jYbOoueW4C5CkRmrC3yzjw24oT+9V72/JGvI3EzAnU3DZlUn76OD0WTAJhP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" integrity="sha512-jkelqcQ/rwCw36MumZ5fWlgs+aZEMLrgGt51ParMK7Tyam7kB5ZG+mB5R0NSeoGVr/4N+q3oGpLaFR/vXgzjTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/show-language/prism-show-language.min.js" integrity="sha512-rbEpCGuIBJX+tniFtcN/64AnyNKyrHCak/B1XEoAHQ71v3XlYBPBXRpQQ+y5aNCfqcaLQTVGPJEwCMbllRKNmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" integrity="sha512-pUNGXbOrc+Y3dm5z2ZN7JYQ/2Tq0jppMDOUsN4sQHVJ9AUQpaeERCUfYYBAnaRB9r8d4gtPKMWICNhm3tRr4Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/toolbar/prism-toolbar.min.js" integrity="sha512-YrvgEHAi5/3o2OT+/vh1z19oJXk/Kk0qdVKbjEFl9VRmcLTaWRYzVziZCvoGpJ2TrnV7rB8pnJcz1ioVJjgw2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

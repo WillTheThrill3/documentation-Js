@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation | timtools</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js" integrity="sha512-/Swpp6aCQ0smuZ+zpklJqMClcUlvxhpLf9aAcM7JjJrj2waCU4dikm3biOtMVAflOOeniW9qzaNXNrbOAOWFCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-markup.min.js" integrity="sha512-+ELqhG7rn9xgybNJa3VI05AczCW2IaKwpKdDC5lD8RMAGc6t+OEV0Cta1QyKCrsncgaRHiN80atxfVo72+M8xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-scss.min.js" integrity="sha512-aczOaJ+mB9uGT6dMJbDaUsS2PWG+XII+1ypFQ0L22Z132V6kMM6m70pQssXsPAFmLI5xkgx/hknBuUuJIJKZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-rQtEAFW9oS0hBzTOYejcMPkq3jYbOoueW4C5CkRmrC3yzjw24oT+9V72/JGvI3EzAnU3DZlUn76OD0WTAJhP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" integrity="sha512-jkelqcQ/rwCw36MumZ5fWlgs+aZEMLrgGt51ParMK7Tyam7kB5ZG+mB5R0NSeoGVr/4N+q3oGpLaFR/vXgzjTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" integrity="sha512-g33HCZ23fueSK96JEeoy9DelAlu7Ry5mtxqLk+zlEiPj7NIpFI6T9mybOvQxjBN50FALFDCviMXiLqWJcFwzaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha512-Dqf5696xtofgH089BgZJo2lSWTvev4GFo+gA2o4GullFY65rzQVQLQVlzLvYwTo0Bb2Gpb6IqwxYWtoMonfdhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+
+
+    <section class="split" id="intro">
+        <nav class="split__nav">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+            </a>
+            <ul>
+                <li>
+                    <a href="index.html" class="back">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                        Retour
+                    </a>
+                </li>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#dependance">Dépendance</a></li>
+                <li><a href="#utilisation">Utilisations</a></li>
+                <li><a href="#variantes">Variantes</a></li>
+            </ul>
+        </nav>
+
+        <div class="split__content">
+            <section class="split__section" id="intro">
+                <h1>Carousel</h1>
+                <p>Cette composante permet d'instancier un carousel sur un élément html.</p>
+            </section>
+
+            <section class="split__section" id="dependance">
+                <h2>Dépendance</h2>
+                <h3>Swiper</h3>
+                <p>
+                    Afin d'utiliser cette composante, vous devrez vous assurer que la dépendance npm swiper soit installée
+                    dans votre projet.
+                </p>
+
+                <script type="text/plain" class="language-scss">
+                    # TERMINAL
+                npm install swiper
+            </script>
+
+                <a href="https://swiperjs.com/swiper-api" class="btn" target="_blank">
+                    Documentation complète
+                    <svg class="icon icon--md">
+                        <use xlink:href="#icon-external"></use>
+                    </svg>
+                </a>
+            </section>
+
+            <section class="split__section" id="utilisation">
+                <h2>Comment l'utiliser</h2>
+
+                <p>
+                    Afin d'utiliser la composante, mettre l'attribut <strong>data-component="Carousel"</strong> sur une
+                    structure html respectant celle de la librairie Swiper.
+                </p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                <div class="swiper" data-component="Carousel"></div>
+            </script>
+
+                <!-- HTML exemple complet -->
+                <details>
+                    <summary>exemple de code complet</summary>
+
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                    <!-- Slider main container -->
+                    <div class="swiper" data-component="Carousel">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </script>
+                </details>
+
+                <p>Pour que les styles soient bien appliqués, il faut importer les styles de bases de Swiper.</p>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                @import '../../node_modules/swiper/swiper.scss';
+
+                // seulement si vous avez des modules supplémentaire comme la pagination
+                @import '../../node_modules/swiper/modules/pagination/pagination.scss';
+            </script>
+
+                <a href="https://swiperjs.com/swiper-api#scss-styles" class="btn" target="_blank">Voir toutes les options de Swiper</a>
+            </section>
+
+            <section class="split__section" id="variantes">
+                <h2>Variantes</h2>
+                <p>
+                    Les variantes permettent d'ajouter des groupes d'options préfaits afin de personaliser l'affichage d'un
+                    carousel.
+                </p>
+
+                <h3>DÉFAUT</h3>
+                <p>
+                    Cette variante permet d'avoir une diapositive à la fois dans tous les résolutions d'écran. Elle ne
+                    requiert aucune configuration supplémentaire.
+                </p>
+                <a href="carousel-demo.html#defaut" class="btn">Voir un démo de « defaut »</a>
+
+                <h3>SPLIT</h3>
+                <p>
+                    Cette variante permet d'avoir 2 diapositives du carousel visible en simultanné sur grand écran (1024px
+                    et plus), mais seulement une diapositive sur écran plus petit (1023px et moins).
+                </p>
+                <p>
+                    Pour activer cette variante, il faut ajouter l'attribut suivant sur l'élément qui est votre component
+                    l'attribut suivant :
+                </p>
+
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                data-carousel="split"
+            </script>
+
+                <!-- HTML exemple complet -->
+                <details>
+                    <summary>exemple de code complet</summary>
+
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                    <!-- Slider main container -->
+                    <div class="swiper" data-component="Carousel" data-carousel="split">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                </script>
+                </details>
+
+                <a href="carousel-demo.html#split" class="btn">Voir un démo de « split »</a>
+            </section>
+        </div>
+    </section>
+
+    <div class="cursor" data-component="Cursor"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js" integrity="sha512-/Swpp6aCQ0smuZ+zpklJqMClcUlvxhpLf9aAcM7JjJrj2waCU4dikm3biOtMVAflOOeniW9qzaNXNrbOAOWFCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-markup.min.js" integrity="sha512-+ELqhG7rn9xgybNJa3VI05AczCW2IaKwpKdDC5lD8RMAGc6t+OEV0Cta1QyKCrsncgaRHiN80atxfVo72+M8xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-scss.min.js" integrity="sha512-aczOaJ+mB9uGT6dMJbDaUsS2PWG+XII+1ypFQ0L22Z132V6kMM6m70pQssXsPAFmLI5xkgx/hknBuUuJIJKZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-rQtEAFW9oS0hBzTOYejcMPkq3jYbOoueW4C5CkRmrC3yzjw24oT+9V72/JGvI3EzAnU3DZlUn76OD0WTAJhP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" integrity="sha512-jkelqcQ/rwCw36MumZ5fWlgs+aZEMLrgGt51ParMK7Tyam7kB5ZG+mB5R0NSeoGVr/4N+q3oGpLaFR/vXgzjTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/show-language/prism-show-language.min.js" integrity="sha512-rbEpCGuIBJX+tniFtcN/64AnyNKyrHCak/B1XEoAHQ71v3XlYBPBXRpQQ+y5aNCfqcaLQTVGPJEwCMbllRKNmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" integrity="sha512-pUNGXbOrc+Y3dm5z2ZN7JYQ/2Tq0jppMDOUsN4sQHVJ9AUQpaeERCUfYYBAnaRB9r8d4gtPKMWICNhm3tRr4Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/toolbar/prism-toolbar.min.js" integrity="sha512-YrvgEHAi5/3o2OT+/vh1z19oJXk/Kk0qdVKbjEFl9VRmcLTaWRYzVziZCvoGpJ2TrnV7rB8pnJcz1ioVJjgw2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

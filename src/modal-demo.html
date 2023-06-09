@@ -1,0 +1,102 @@
+{% include '_partials/_header.html' %}
+
+    <section class="split" id="intro">
+
+        <nav class="split__nav">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+            </a>
+            <ul>
+                <li>
+                    <a href="modal.html" class="back">
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                        Retour
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="split__content">
+
+                    <!-- Zone grille -->
+                <section class="section">
+                    <div class="wrapper">
+                        <h2 class="section__title">modal statique</h2>
+                        <div class="cards">
+                            <a href="#" data-component="Modal" data-modal-id="tpl-modal">
+                                <article class="card-demo">1</article>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Zone grille -->
+                <section class="section">
+                    <div class="wrapper">
+                        <h2 class="section__title">
+                            Une grille qui contient plus que des outils
+                        </h2>
+                        <div class="cards">
+                            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="poire">
+                                <article class="card-demo">poire</article>
+                            </a>
+
+                            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="banane">
+                                <article class="card-demo">banane</article></a
+                            >
+                            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="dinde">
+                                <article class="card-demo">dinde</article></a
+                            >
+                            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="porte">
+                                <article class="card-demo">porte</article></a
+                            >
+                        </div>
+                    </div>
+                </section>
+            </div>
+        
+            <template id="tpl-modal">
+                <div class="modal">
+                    <div class="modal__scrim"></div>
+                    <div class="modal__box">
+                        <div class="modal__content">
+                            <h2>premier modale TIMTOOL</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Saepe cumque quam nemo qui perferendis neque ipsam vitae adipisci 
+                                asperiores omnis ea sint laboriosam ullam reiciendis, quisquam blanditiis
+                                dolorem, ipsum aspernatur!
+                            </p>
+                        </div>
+                        <button class="modal__close js-close"></button>
+                    </div>
+                </div>
+            </template>
+
+            <template id="tpl-modal-tool">
+                <div class="modal">
+                    <div class="modal__scrim"></div>
+                    <div class="modal__box">
+                        <div class="modal__content">
+                            <h2>Tu as choisi la [[title]]</h2>
+                            <p>
+                            blah blah blah la [[title]]. Bon choix!
+                            </p>
+                        </div>
+                        <button class="modal__close js-close"></button>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+           
+
+    </section>
+
+    <div class="cursor" data-component="Cursor"></div>
+        
+
+    {% include '_partials/_footer.html' %}
