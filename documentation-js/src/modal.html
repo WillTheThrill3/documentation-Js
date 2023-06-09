@@ -1,0 +1,263 @@
+{% include '_partials/_header.html' %}
+
+<section class="split" id="intro">
+    <nav class="split__nav">
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+        </a>
+        <ul>
+            <li>
+                <a href="index.html" class="back">
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-left"></use>
+                    </svg>
+                    Retour
+                </a>
+            </li>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#utilisation">Utilisations</a></li>
+            <li><a href="#personnalisation">Personnalisation</a></li>
+            <li><a href="#demonstration">Démonstration</a></li>
+        </ul>
+    </nav>
+
+    <div class="split__content">
+        <section class="split__section" id="intro">
+            <h1>Modal</h1>
+            <p>
+                Cette composante vous permet d'avoir une fenêtre modale et de l'animer.
+            </p>
+        </section>
+
+        <section class="split__section" id="utilisation">
+
+                <h2>Comment l'utiliser</h2>
+
+                <p>
+                    Afin d'utiliser la composante, il est nécéssaire d'ajouter <strong>data-component="Modal"</strong> et l'attribut 
+                    <strong>data-modal-id="tpl-modal"</strong> sur une structure html à la balise <strong>"a"</strong> qui activera
+                     la fenêtre modale.
+                </p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+
+                    <a href="#" data-component="Modal" data-modal-id="tpl-modal">
+                        <article class="card">1</article>
+                    </a>
+
+                </script>
+
+                <p>Pour que les styles soient bien appliqués, il faut importer le style <strong>modal.scss</strong> dans le fichier <strong>main.scss</strong>.</p>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                    @import 'components/modal.scss';
+                </script>
+
+                <p>
+                    Pour créer la fenêtre modale, il est primordial d'appliquer la structure suivante.
+                </p>
+       <p><strong>À noter: la structure complète (incluent la balise template) ne doit pas changer.</strong></p>
+
+                <details>
+                    <summary>exemple de structure</summary>
+        
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                        
+                        <template id="tpl-modal"> <!-- le ID dans lequel activera la fenêtre modale -->
+                            <div class="modal"> <!-- la classe qui englobera tous les propiétés SCSS -->
+                                <div class="modal__scrim"></div> <!-- la classe qui applique l'opacité d'arrière-plan de la fenêtre modale -->
+                                <div class="modal__box"> <!-- le boite de la fenêtre modale -->
+                                    <div class="modal__content"> <!-- la classe contenant les propriétés pour le contenu de la fenêtre modale -->
+                                        <h2>premier modale TIMTOOL</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Saepe cumque quam nemo qui perferendis neque ipsam vitae adipisci 
+                                            asperiores omnis ea sint laboriosam ullam reiciendis, quisquam blanditiis
+                                            dolorem, ipsum aspernatur!
+                                        </p>
+                                    </div>
+                                    <button class="modal__close js-close"></button> <!-- le bouton X pour fermer la fenêtre modale -->
+                                </div>
+                            </div>
+                        </template>
+       
+                    </script>
+                </details>
+
+                <h2>Utilisation supplémentaire</h2>
+
+                <p>
+                    En changeant l'attribut pour <strong>data-modal-id="tpl-modal-tool"</strong> et en ajoutant <strong>data-modal-title="unExemple"</strong> sur une structure html à la balise <strong>"a"</strong>, vous donne la 
+                    possibilité de modifier le titre de votre fenêtre modale.
+                </p>
+
+                <script type="text/plain" class="language-markup">
+                    # HTML
+
+                    <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="unExemple">
+                        <article class="card-demo">unExemple</article>
+                    </a>
+
+                </script>
+
+                <p>
+                    Pour créer cette version de fenêtre modale, il est primordial d'appliquer la structure suivante.
+                </p>
+       <p><strong>À noter: la structure complète (incluent la balise template) ne doit pas changer.</strong></p>
+                
+       <details>
+        <summary>exemple de structure</summary>
+
+        <script type="text/plain" class="language-markup">
+            # HTML
+            
+            <template id="tpl-modal-tool"> <!-- le ID dans lequel activera la fenêtre modale avec le titre personnaliser -->
+                <div class="modal"> <!-- la classe qui englobera tous les propiétés SCSS -->
+                    <div class="modal__scrim"></div> <!-- la classe qui applique l'opacité d'arrière-plan de la fenêtre modale -->
+                    <div class="modal__box"> <!-- le boite de la fenêtre modale -->
+                        <div class="modal__content"> <!-- la classe contenant les propriétés pour le contenu de la fenêtre modale -->
+                            <h2>Tu as choisi la [[title]]</h2> <!-- ajouter [[title]] pour appliquer la modification de votre titre  -->
+                            <p>
+                            blah blah blah la [[title]]. Bon choix! <!-- ajouter [[title]] pour appliquer la modification de votre titre  -->
+                            </p>
+                        </div>
+                        <button class="modal__close js-close"></button> <!-- le bouton X pour fermer la fenêtre modale -->
+                    </div>
+                </div>
+            </template>
+
+        </script>
+    </details>
+
+    <p><strong>À savoir: en ajoutant [[title]] cela syncronise avec l'attribut data-modal-title="unExemple". Voici un exemple</strong></p>
+
+    <details>
+        <summary>Détails complet</summary>
+
+<script type="text/plain" class="language-markup">
+        # HTML
+        
+        <div class="cards">
+            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="poire">
+                <article class="card-demo">poire</article>
+            </a>
+
+            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="banane">
+                <article class="card-demo">banane</article></a
+            >
+            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="dinde">
+                <article class="card-demo">dinde</article></a
+            >
+            <a href="#" data-component="Modal" data-modal-id="tpl-modal-tool" data-modal-title="porte">
+                <article class="card-demo">porte</article></a
+            >
+        </div>
+
+
+        <template id="tpl-modal-tool">
+            <div class="modal">
+                <div class="modal__scrim"></div>
+                <div class="modal__box">
+                    <div class="modal__content">
+                        <h2>Tu as choisi la [[title]]</h2>
+                        <p>
+                        blah blah blah la [[title]]. Bon choix!
+                        </p>
+                    </div>
+                    <button class="modal__close js-close"></button>
+                </div>
+            </div>
+        </template>
+
+    </script>
+    </details>
+    
+        </section>
+
+        <section class="split__section" id="personnalisation">
+
+            <h2>Comment le personnaliser</h2>
+
+            <p>Pour personnalisation l'apparition et la fermeture de la fenêtre modale, il faut cibler la classe .modal__box et .modal-is-active</p>
+
+
+            <script type="text/plain" class="language-scss" >
+
+                .modal__box {
+                  // background-color: var(--color-white ); 
+                  //  border-radius: 10px;
+                  //  color: var(--color-black);
+                  //    width: 80vw;
+                  //  position: relative;
+                  //  height: 80vh;
+                  //  z-index: 1;
+                    opacity: 0;  // le fenêtre non-visible
+                    transform: translateX(100%); // le fenêtre est à droite complètement
+                    transition: all 0.4s $ease-in-expo; // la durée de l'effet 'ease-in-expo' est de 0.4s
+                
+                    .modal-is-active & {
+                        opacity: 1; // le fenêtre visible
+                        transform: translateX(0); // la fenêtre sera au centre de la page
+                        transition: all 0.4s $ease-out-expo 0.2s; // la durée de l'effet 'ease-in-expo' est de 0.4s ensuite disparait en 0.2s
+                
+                    }
+                }
+
+            </script>
+
+            <h2>Petit aide mémoire des effets</h2>
+
+            <a href="https://www.w3schools.com/css/css3_2dtransforms.asp" class="btn" target="_blank">
+                Le transform en 2D
+                <svg class="icon icon--md">
+                    <use xlink:href="#icon-external"></use>
+                </svg>
+            </a>
+            
+            <a href="https://www.w3schools.com/css/css3_3dtransforms.asp" class="btn" target="_blank">
+                Le transform en 3D
+                <svg class="icon icon--md">
+                    <use xlink:href="#icon-external"></use>
+                </svg>
+            </a>
+
+            <a href="https://www.w3schools.com/css/css3_transitions.asp" class="btn" target="_blank">
+               Les transitions
+                <svg class="icon icon--md">
+                    <use xlink:href="#icon-external"></use>
+                </svg>
+            </a>
+
+            <a href="https://www.w3schools.com/css/css3_animations.asp" class="btn" target="_blank">
+                Les animations
+                 <svg class="icon icon--md">
+                     <use xlink:href="#icon-external"></use>
+                 </svg>
+             </a>
+
+        </section>
+
+        <section class="split__section" id="demonstration">
+            <h2>Page d'animation disponible</h2>
+
+            <p>Cliquez sur le bouton ci-dessous pour voir tous les fenêtre modales!</p>
+
+            <a href="modal-demo.html" class="btn">
+                Démo Modal
+                 <svg class="icon icon--md">
+                     <use xlink:href="#icon-external"></use>
+                 </svg>
+             </a>
+        </section>
+
+
+
+
+    </div>
+</section>
+
+<div class="cursor" data-component="Cursor"></div>
+
+{% include '_partials/_footer.html' %}

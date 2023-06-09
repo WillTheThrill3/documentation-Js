@@ -1,0 +1,61 @@
+{% include '_partials/_header.html' %}
+
+<section class="split" id="intro">
+    <nav class="split__nav">
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+        </a>
+        <ul>
+            <li>
+                <a href="carousel.html" class="back">
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-left"></use>
+                    </svg>
+                    Retour
+                </a>
+            </li>
+            <li><a href="#defaut">Defaut</a></li>
+            <li><a href="#split">Split</a></li>
+        </ul>
+    </nav>
+
+    <div class="split__content">
+        <section class="split__section" id="intro">
+            <h1>Démo Carousel</h1>
+            <p>Vous trouverez une représenation visuelle des variantes du Carousel.</p>
+        </section>
+
+        <section class="split__section" id="defaut">
+            <h2>Variante : Defaut</h2>
+            <p>Cette composante permet d'instancier un carousel sur un élément html.</p>
+
+            <div class="swiper" data-component="Carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">1</div>
+                    <div class="swiper-slide">2</div>
+                    <div class="swiper-slide">3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="split__section" id="split">
+            <h2>Variante : split</h2>
+            <p>Cette composante permet d'instancier un   sur un élément html.</p>
+
+            <div class="swiper" data-component="Carousel" data-carousel="split">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">1</div>
+                    <div class="swiper-slide">2</div>
+                    <div class="swiper-slide">3</div>
+                    <div class="swiper-slide">4</div>
+                    <div class="swiper-slide">5</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<div class="cursor" data-component="Cursor"></div>
+
+{% include '_partials/_footer.html' %}

@@ -1,0 +1,24 @@
+/* ==========================================================================
+   header / component
+   ========================================================================== */
+
+.header {
+    color: white;
+    display: flex;
+    padding: calc(var(--spacing-md) / 2) var(--spacing-md);
+}
+
+.header__brand {
+    margin-right: auto;
+    width: 200px;
+}
+
+.header__toggle {
+    --size: 50px;
+
+    background-color: transparent;
+    color: currentColor;
+    border: none;
+    height: var(--size);
+    width: var(--size);
+}

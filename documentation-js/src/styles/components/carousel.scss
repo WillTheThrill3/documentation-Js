@@ -1,0 +1,25 @@
+/* ==========================================================================
+   carousel / component
+   ========================================================================== */
+
+.carousel {
+}
+
+.swiper-slide {
+    background: var(--color-primary);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-pagination {
+    // Variables utilisées par swiper pour la taille des bullets
+    --swiper-pagination-bullet-width: 15px;
+    --swiper-pagination-bullet-height: 15px;
+}
+
+.swiper-pagination-bullet {
+    // couleur de la bullet active
+    background: white;
+}

@@ -1,0 +1,31 @@
+{% include '_partials/_header.html' %}
+
+<section class="split" id="intro">
+    <nav class="split__nav">
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+        </a>
+        <ul>
+            <li>
+                <a href="cursor.html" class="back">
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-left"></use>
+                    </svg>
+                    Retour
+                </a>
+            </li>
+            <li><a href="cursor-demo-light.html">Claire</a></li>
+            <li><a href="cursor-demo-dark.html">Foncé</a></li>
+        </ul>
+    </nav>
+
+    <div class="split__content">
+        <h1>Page d'exemple des thèmes de curseur</h1>
+
+          <a href="#" class="btn">Met le curseur sur moi!</a>
+    </div>
+
+    <div class="cursor-dark" data-component="Cursor"></div>
+    
+
+{% include '_partials/_footer.html' %}

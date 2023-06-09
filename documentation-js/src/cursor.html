@@ -1,0 +1,188 @@
+{% include '_partials/_header.html' %}
+
+<section class="split" id="intro">
+    <nav class="split__nav">
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo-timtools-invert.svg" alt="logo de timtools" />
+        </a>
+        <ul>
+            <li>
+                <a href="index.html" class="back">
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-left"></use>
+                    </svg>
+                    Retour
+                </a>
+            </li>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#utilisation">Utilisations</a></li>
+            <li><a href="#theme">Thème de curseur</a></li>
+        </ul>
+    </nav>
+
+    <div class="split__content">
+        <section class="split__section" id="intro">
+            <h1>Cursor</h1>
+            <p>Cette composante permet d'avoir un curseur personnalisé.</p>
+        </section>
+
+
+        <section class="split__section" id="utilisation">
+            <h2>Comment l'utiliser</h2>
+
+            <p>
+                Afin d'utiliser la composante, mettre l'attribut <strong>data-component="Cursor"</strong> sur une
+                structure html en dessous de la balise <strong>footer</strong>.
+            </p>
+            <script type="text/plain" class="language-markup">
+                # HTML
+                <div class="cursor" data-component="Cursor"></div>
+            </script>
+
+            <!-- HTML exemple de l'emplacement -->
+            <details>
+                <summary>exemple de l'emplacement</summary>
+
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                    <!-- Contenu footer -->
+                    <footer>
+                        <ul>
+                            <li><a href="#"></a>exemple</li>
+                            <li><a href="#"></a>exemple</li>
+                            <li><a href="#"></a>exemple</li>
+                            <li><a href="#"></a>exemple</li>
+                        </ul>    
+                    </footer>
+
+                    <!-- Structure pour le curseur -->
+                    <div class="cursor" data-component="Cursor"></div>
+                       
+                </script>
+            </details>
+
+            <p>Pour personnaliser le style du curseur, il faut essentiellement créer un fichier <strong>cursor.scss</strong> et ajouter les modifications nécéssaires</p>
+
+            <!-- SCSS exemple de code -->
+            <details>
+                <summary>exemple de code complet</summary>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                    <!-- Exemple de code complet -->
+                
+                    .cursor {   <!-- classe qui aura les personalisations du curseur -->
+                        width: 18px;    <!-- largeur du curseur personnalisé -->
+                        height: 18px;   <!-- hauteur du curseur personnalisé -->
+                        background: var(--color-white); <!-- couleur désiré -->
+                        opacity: 0.8;        <!-- opacité désiré -->
+                        border-radius: 100%; <!-- cela permet de faire un cercle -->  
+                        position: absolute;     <!-- Important, cela permet le déplacement du curseur --> 
+                        z-index: 30;            <!-- Important, cela permet de le voir par-dessus tout --> 
+                        pointer-events: none;   <!-- Important, cela permet d'éviter l'intéraction du curseur par défaut --> 
+                        transform: translate(-50%, -50%); <!-- Important, cela permet de mettre de pointeur au centre --> 
+                        transition: all 0.1s ease-out;    <!-- cela permet de faire des transitions sur chaque actions du curseur --> 
+                    
+                        &.hover {   <!-- lorsque le curseur est en hover -->
+                            background: var(--color-white); <!-- changement de couleur désiré -->
+                            opacity: 0.6; <!-- changement opacité désiré -->
+                        }
+                    
+                        &.down {    <!-- lorsque le clique gauche est enfoncé -->
+                            width: 12px;  <!-- largeur du curseur personnalisé -->
+                            height: 12px; <!-- hauteur du curseur personnalisé -->
+                            background: var(--color-white); <!-- changement de couleur désiré -->
+                            opacity: 1; <!-- changement opacité désiré -->
+                        }
+                    
+                    }
+                       
+                </script>
+            </details>
+
+            <a href="https://www.w3schools.com/cssref/" class="btn" target="_blank">
+                Liste de propriété CSS
+                <svg class="icon icon--md">
+                    <use xlink:href="#icon-external"></use>
+                </svg>
+            </a>
+
+            <p>Pour que les styles soient bien appliqués, il faut importer le style <strong>cursor.scss</strong> dans le fichier <strong>main.scss</strong>.</p>
+
+            <script type="text/plain" class="language-scss">
+                # SCSS
+                @import 'components/cursor.scss';
+
+            </script>
+
+            <p>Afin de s'assurer qu'il n'y ait pas de problème avec le curseur par défaut et de navigateur autre que chrome, il est nécéssaire d'ajouter un petit code dans le <strong>body.scss</strong> </p>
+
+            <!-- SCSS exemple de code -->
+            <details>
+                <summary>exemple de code complet</summary>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                    <!-- Code complet à ajouter dans le body.scss -->
+                
+                    html {
+                        
+                        <!-- En cas de problème avec le navigateur, cela permet de cacher le curseur personnalisé -->
+                        &:not(.custom-cursor) .cursor {
+                            top: -1000px;
+                            left: -1000px;
+                       }
+                       <!-- Ceci permet de cacher tout les effets du curseur par défaut afin
+                            de prioriser le curseur personnalisé -->
+                       &.custom-cursor {
+                           cursor: none;
+                            *{
+                               cursor: none;
+                           }
+                       }
+                    
+                    }
+                       
+                </script>
+            </details>
+
+        </section>
+
+        <section class="split__section" id="theme">
+            <h2>Thème de curseur</h2>
+            <p>
+                Les thèmes de curseur permettent de le voir sous différent environnement.
+            </p>
+
+            <h3>CURSEUR THÈME CLAIRE</h3>
+            <p>
+                Ce thème permet d'avoir le curseur plus claire dans un environnemnet foncé.
+            </p>
+
+            <script type="text/plain" class="language-markup">
+                # HTML
+                <!-- modifier la classe pour "cursor-light" pour bénéfier de cette variante -->
+                <div class="cursor-light" data-component="Cursor"></div>
+            </script>
+
+            <a href="cursor-demo-light.html" class="btn">Voir un démo de « thème claire »</a>
+
+            <h3>CURSEUR THÈME SOMBRE</h3>
+            <p>
+                Ce thème permet d'avoir le curseur plus foncé dans un environnemnet claire.
+            </p>
+
+            <script type="text/plain" class="language-markup">
+                # HTML
+                <!-- modifier la classe pour "cursor-dark" pour bénéfier de cette variante -->
+                <div class="cursor-dark" data-component="Cursor"></div>
+            </script>
+
+            <a href="cursor-demo-dark.html" class="btn">Voir un démo de « thème foncé »</a>
+        </section>
+    </div>
+</section>
+
+<div class="cursor" data-component="Cursor"></div>
+
+{% include '_partials/_footer.html' %}
